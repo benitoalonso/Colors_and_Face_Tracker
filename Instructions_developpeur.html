@@ -1,0 +1,1070 @@
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=utf-8"/><title>Instructions_developpeur</title><style>
+/* cspell:disable-file */
+/* webkit printing magic: print all background colors */
+html {
+	-webkit-print-color-adjust: exact;
+}
+* {
+	box-sizing: border-box;
+	-webkit-print-color-adjust: exact;
+}
+
+html,
+body {
+	margin: 0;
+	padding: 0;
+}
+@media only screen {
+	body {
+		margin: 2em auto;
+		max-width: 900px;
+		color: rgb(55, 53, 47);
+	}
+}
+
+body {
+	line-height: 1.5;
+	white-space: pre-wrap;
+}
+
+a,
+a.visited {
+	color: inherit;
+	text-decoration: underline;
+}
+
+.pdf-relative-link-path {
+	font-size: 80%;
+	color: #444;
+}
+
+h1,
+h2,
+h3 {
+	letter-spacing: -0.01em;
+	line-height: 1.2;
+	font-weight: 600;
+	margin-bottom: 0;
+}
+
+.page-title {
+	font-size: 2.5rem;
+	font-weight: 700;
+	margin-top: 0;
+	margin-bottom: 0.75em;
+}
+
+h1 {
+	font-size: 1.875rem;
+	margin-top: 1.875rem;
+}
+
+h2 {
+	font-size: 1.5rem;
+	margin-top: 1.5rem;
+}
+
+h3 {
+	font-size: 1.25rem;
+	margin-top: 1.25rem;
+}
+
+.source {
+	border: 1px solid #ddd;
+	border-radius: 3px;
+	padding: 1.5em;
+	word-break: break-all;
+}
+
+.callout {
+	border-radius: 3px;
+	padding: 1rem;
+}
+
+figure {
+	margin: 1.25em 0;
+	page-break-inside: avoid;
+}
+
+figcaption {
+	opacity: 0.5;
+	font-size: 85%;
+	margin-top: 0.5em;
+}
+
+mark {
+	background-color: transparent;
+}
+
+.indented {
+	padding-left: 1.5em;
+}
+
+hr {
+	background: transparent;
+	display: block;
+	width: 100%;
+	height: 1px;
+	visibility: visible;
+	border: none;
+	border-bottom: 1px solid rgba(55, 53, 47, 0.09);
+}
+
+img {
+	max-width: 100%;
+}
+
+@media only print {
+	img {
+		max-height: 100vh;
+		object-fit: contain;
+	}
+}
+
+@page {
+	margin: 1in;
+}
+
+.collection-content {
+	font-size: 0.875rem;
+}
+
+.column-list {
+	display: flex;
+	justify-content: space-between;
+}
+
+.column {
+	padding: 0 1em;
+}
+
+.column:first-child {
+	padding-left: 0;
+}
+
+.column:last-child {
+	padding-right: 0;
+}
+
+.table_of_contents-item {
+	display: block;
+	font-size: 0.875rem;
+	line-height: 1.3;
+	padding: 0.125rem;
+}
+
+.table_of_contents-indent-1 {
+	margin-left: 1.5rem;
+}
+
+.table_of_contents-indent-2 {
+	margin-left: 3rem;
+}
+
+.table_of_contents-indent-3 {
+	margin-left: 4.5rem;
+}
+
+.table_of_contents-link {
+	text-decoration: none;
+	opacity: 0.7;
+	border-bottom: 1px solid rgba(55, 53, 47, 0.18);
+}
+
+table,
+th,
+td {
+	border: 1px solid rgba(55, 53, 47, 0.09);
+	border-collapse: collapse;
+}
+
+table {
+	border-left: none;
+	border-right: none;
+}
+
+th,
+td {
+	font-weight: normal;
+	padding: 0.25em 0.5em;
+	line-height: 1.5;
+	min-height: 1.5em;
+	text-align: left;
+}
+
+th {
+	color: rgba(55, 53, 47, 0.6);
+}
+
+ol,
+ul {
+	margin: 0;
+	margin-block-start: 0.6em;
+	margin-block-end: 0.6em;
+}
+
+li > ol:first-child,
+li > ul:first-child {
+	margin-block-start: 0.6em;
+}
+
+ul > li {
+	list-style: disc;
+}
+
+ul.to-do-list {
+	text-indent: -1.7em;
+}
+
+ul.to-do-list > li {
+	list-style: none;
+}
+
+.to-do-children-checked {
+	text-decoration: line-through;
+	opacity: 0.375;
+}
+
+ul.toggle > li {
+	list-style: none;
+}
+
+ul {
+	padding-inline-start: 1.7em;
+}
+
+ul > li {
+	padding-left: 0.1em;
+}
+
+ol {
+	padding-inline-start: 1.6em;
+}
+
+ol > li {
+	padding-left: 0.2em;
+}
+
+.mono ol {
+	padding-inline-start: 2em;
+}
+
+.mono ol > li {
+	text-indent: -0.4em;
+}
+
+.toggle {
+	padding-inline-start: 0em;
+	list-style-type: none;
+}
+
+/* Indent toggle children */
+.toggle > li > details {
+	padding-left: 1.7em;
+}
+
+.toggle > li > details > summary {
+	margin-left: -1.1em;
+}
+
+.selected-value {
+	display: inline-block;
+	padding: 0 0.5em;
+	background: rgba(206, 205, 202, 0.5);
+	border-radius: 3px;
+	margin-right: 0.5em;
+	margin-top: 0.3em;
+	margin-bottom: 0.3em;
+	white-space: nowrap;
+}
+
+.collection-title {
+	display: inline-block;
+	margin-right: 1em;
+}
+
+.simple-table {
+	margin-top: 1em;
+	font-size: 0.875rem;
+	empty-cells: show;
+}
+.simple-table td {
+	height: 29px;
+	min-width: 120px;
+}
+
+.simple-table th {
+	height: 29px;
+	min-width: 120px;
+}
+
+.simple-table-header-color {
+	background: rgb(247, 246, 243);
+	color: black;
+}
+.simple-table-header {
+	font-weight: 500;
+}
+
+time {
+	opacity: 0.5;
+}
+
+.icon {
+	display: inline-block;
+	max-width: 1.2em;
+	max-height: 1.2em;
+	text-decoration: none;
+	vertical-align: text-bottom;
+	margin-right: 0.5em;
+}
+
+img.icon {
+	border-radius: 3px;
+}
+
+.user-icon {
+	width: 1.5em;
+	height: 1.5em;
+	border-radius: 100%;
+	margin-right: 0.5rem;
+}
+
+.user-icon-inner {
+	font-size: 0.8em;
+}
+
+.text-icon {
+	border: 1px solid #000;
+	text-align: center;
+}
+
+.page-cover-image {
+	display: block;
+	object-fit: cover;
+	width: 100%;
+	max-height: 30vh;
+}
+
+.page-header-icon {
+	font-size: 3rem;
+	margin-bottom: 1rem;
+}
+
+.page-header-icon-with-cover {
+	margin-top: -0.72em;
+	margin-left: 0.07em;
+}
+
+.page-header-icon img {
+	border-radius: 3px;
+}
+
+.link-to-page {
+	margin: 1em 0;
+	padding: 0;
+	border: none;
+	font-weight: 500;
+}
+
+p > .user {
+	opacity: 0.5;
+}
+
+td > .user,
+td > time {
+	white-space: nowrap;
+}
+
+input[type="checkbox"] {
+	transform: scale(1.5);
+	margin-right: 0.6em;
+	vertical-align: middle;
+}
+
+p {
+	margin-top: 0.5em;
+	margin-bottom: 0.5em;
+}
+
+.image {
+	border: none;
+	margin: 1.5em 0;
+	padding: 0;
+	border-radius: 0;
+	text-align: center;
+}
+
+.code,
+code {
+	background: rgba(135, 131, 120, 0.15);
+	border-radius: 3px;
+	padding: 0.2em 0.4em;
+	border-radius: 3px;
+	font-size: 85%;
+	tab-size: 2;
+}
+
+code {
+	color: #eb5757;
+}
+
+.code {
+	padding: 1.5em 1em;
+}
+
+.code-wrap {
+	white-space: pre-wrap;
+	word-break: break-all;
+}
+
+.code > code {
+	background: none;
+	padding: 0;
+	font-size: 100%;
+	color: inherit;
+}
+
+blockquote {
+	font-size: 1.25em;
+	margin: 1em 0;
+	padding-left: 1em;
+	border-left: 3px solid rgb(55, 53, 47);
+}
+
+.bookmark {
+	text-decoration: none;
+	max-height: 8em;
+	padding: 0;
+	display: flex;
+	width: 100%;
+	align-items: stretch;
+}
+
+.bookmark-title {
+	font-size: 0.85em;
+	overflow: hidden;
+	text-overflow: ellipsis;
+	height: 1.75em;
+	white-space: nowrap;
+}
+
+.bookmark-text {
+	display: flex;
+	flex-direction: column;
+}
+
+.bookmark-info {
+	flex: 4 1 180px;
+	padding: 12px 14px 14px;
+	display: flex;
+	flex-direction: column;
+	justify-content: space-between;
+}
+
+.bookmark-image {
+	width: 33%;
+	flex: 1 1 180px;
+	display: block;
+	position: relative;
+	object-fit: cover;
+	border-radius: 1px;
+}
+
+.bookmark-description {
+	color: rgba(55, 53, 47, 0.6);
+	font-size: 0.75em;
+	overflow: hidden;
+	max-height: 4.5em;
+	word-break: break-word;
+}
+
+.bookmark-href {
+	font-size: 0.75em;
+	margin-top: 0.25em;
+}
+
+.sans { font-family: ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol"; }
+.code { font-family: "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace; }
+.serif { font-family: Lyon-Text, Georgia, ui-serif, serif; }
+.mono { font-family: iawriter-mono, Nitti, Menlo, Courier, monospace; }
+.pdf .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK JP'; }
+.pdf:lang(zh-CN) .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK SC'; }
+.pdf:lang(zh-TW) .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK TC'; }
+.pdf:lang(ko-KR) .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK KR'; }
+.pdf .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK JP'; }
+.pdf:lang(zh-CN) .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK SC'; }
+.pdf:lang(zh-TW) .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK TC'; }
+.pdf:lang(ko-KR) .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK KR'; }
+.pdf .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK JP'; }
+.pdf:lang(zh-CN) .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK SC'; }
+.pdf:lang(zh-TW) .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK TC'; }
+.pdf:lang(ko-KR) .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK KR'; }
+.pdf .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK JP'; }
+.pdf:lang(zh-CN) .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK SC'; }
+.pdf:lang(zh-TW) .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK TC'; }
+.pdf:lang(ko-KR) .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK KR'; }
+.highlight-default {
+	color: rgba(55, 53, 47, 1);
+}
+.highlight-gray {
+	color: rgba(120, 119, 116, 1);
+	fill: rgba(120, 119, 116, 1);
+}
+.highlight-brown {
+	color: rgba(159, 107, 83, 1);
+	fill: rgba(159, 107, 83, 1);
+}
+.highlight-orange {
+	color: rgba(217, 115, 13, 1);
+	fill: rgba(217, 115, 13, 1);
+}
+.highlight-yellow {
+	color: rgba(203, 145, 47, 1);
+	fill: rgba(203, 145, 47, 1);
+}
+.highlight-teal {
+	color: rgba(68, 131, 97, 1);
+	fill: rgba(68, 131, 97, 1);
+}
+.highlight-blue {
+	color: rgba(51, 126, 169, 1);
+	fill: rgba(51, 126, 169, 1);
+}
+.highlight-purple {
+	color: rgba(144, 101, 176, 1);
+	fill: rgba(144, 101, 176, 1);
+}
+.highlight-pink {
+	color: rgba(193, 76, 138, 1);
+	fill: rgba(193, 76, 138, 1);
+}
+.highlight-red {
+	color: rgba(212, 76, 71, 1);
+	fill: rgba(212, 76, 71, 1);
+}
+.highlight-gray_background {
+	background: rgba(241, 241, 239, 1);
+}
+.highlight-brown_background {
+	background: rgba(244, 238, 238, 1);
+}
+.highlight-orange_background {
+	background: rgba(251, 236, 221, 1);
+}
+.highlight-yellow_background {
+	background: rgba(251, 243, 219, 1);
+}
+.highlight-teal_background {
+	background: rgba(237, 243, 236, 1);
+}
+.highlight-blue_background {
+	background: rgba(231, 243, 248, 1);
+}
+.highlight-purple_background {
+	background: rgba(244, 240, 247, 0.8);
+}
+.highlight-pink_background {
+	background: rgba(249, 238, 243, 0.8);
+}
+.highlight-red_background {
+	background: rgba(253, 235, 236, 1);
+}
+.block-color-default {
+	color: inherit;
+	fill: inherit;
+}
+.block-color-gray {
+	color: rgba(120, 119, 116, 1);
+	fill: rgba(120, 119, 116, 1);
+}
+.block-color-brown {
+	color: rgba(159, 107, 83, 1);
+	fill: rgba(159, 107, 83, 1);
+}
+.block-color-orange {
+	color: rgba(217, 115, 13, 1);
+	fill: rgba(217, 115, 13, 1);
+}
+.block-color-yellow {
+	color: rgba(203, 145, 47, 1);
+	fill: rgba(203, 145, 47, 1);
+}
+.block-color-teal {
+	color: rgba(68, 131, 97, 1);
+	fill: rgba(68, 131, 97, 1);
+}
+.block-color-blue {
+	color: rgba(51, 126, 169, 1);
+	fill: rgba(51, 126, 169, 1);
+}
+.block-color-purple {
+	color: rgba(144, 101, 176, 1);
+	fill: rgba(144, 101, 176, 1);
+}
+.block-color-pink {
+	color: rgba(193, 76, 138, 1);
+	fill: rgba(193, 76, 138, 1);
+}
+.block-color-red {
+	color: rgba(212, 76, 71, 1);
+	fill: rgba(212, 76, 71, 1);
+}
+.block-color-gray_background {
+	background: rgba(241, 241, 239, 1);
+}
+.block-color-brown_background {
+	background: rgba(244, 238, 238, 1);
+}
+.block-color-orange_background {
+	background: rgba(251, 236, 221, 1);
+}
+.block-color-yellow_background {
+	background: rgba(251, 243, 219, 1);
+}
+.block-color-teal_background {
+	background: rgba(237, 243, 236, 1);
+}
+.block-color-blue_background {
+	background: rgba(231, 243, 248, 1);
+}
+.block-color-purple_background {
+	background: rgba(244, 240, 247, 0.8);
+}
+.block-color-pink_background {
+	background: rgba(249, 238, 243, 0.8);
+}
+.block-color-red_background {
+	background: rgba(253, 235, 236, 1);
+}
+.select-value-color-pink { background-color: rgba(245, 224, 233, 1); }
+.select-value-color-purple { background-color: rgba(232, 222, 238, 1); }
+.select-value-color-green { background-color: rgba(219, 237, 219, 1); }
+.select-value-color-gray { background-color: rgba(227, 226, 224, 1); }
+.select-value-color-opaquegray { background-color: rgba(255, 255, 255, 0.0375); }
+.select-value-color-orange { background-color: rgba(250, 222, 201, 1); }
+.select-value-color-brown { background-color: rgba(238, 224, 218, 1); }
+.select-value-color-red { background-color: rgba(255, 226, 221, 1); }
+.select-value-color-yellow { background-color: rgba(253, 236, 200, 1); }
+.select-value-color-blue { background-color: rgba(211, 229, 239, 1); }
+
+.checkbox {
+	display: inline-flex;
+	vertical-align: text-bottom;
+	width: 16;
+	height: 16;
+	background-size: 16px;
+	margin-left: 2px;
+	margin-right: 5px;
+}
+
+.checkbox-on {
+	background-image: url("data:image/svg+xml;charset=UTF-8,%3Csvg%20width%3D%2216%22%20height%3D%2216%22%20viewBox%3D%220%200%2016%2016%22%20fill%3D%22none%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%0A%3Crect%20width%3D%2216%22%20height%3D%2216%22%20fill%3D%22%2358A9D7%22%2F%3E%0A%3Cpath%20d%3D%22M6.71429%2012.2852L14%204.9995L12.7143%203.71436L6.71429%209.71378L3.28571%206.2831L2%207.57092L6.71429%2012.2852Z%22%20fill%3D%22white%22%2F%3E%0A%3C%2Fsvg%3E");
+}
+
+.checkbox-off {
+	background-image: url("data:image/svg+xml;charset=UTF-8,%3Csvg%20width%3D%2216%22%20height%3D%2216%22%20viewBox%3D%220%200%2016%2016%22%20fill%3D%22none%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%0A%3Crect%20x%3D%220.75%22%20y%3D%220.75%22%20width%3D%2214.5%22%20height%3D%2214.5%22%20fill%3D%22white%22%20stroke%3D%22%2336352F%22%20stroke-width%3D%221.5%22%2F%3E%0A%3C%2Fsvg%3E");
+}
+	
+</style></head><body><article id="8b456a18-b83b-4a31-ac9e-3f1bc67fdf4a" class="page sans"><header><img class="page-cover-image" src="https://images.unsplash.com/photo-1516259762381-22954d7d3ad2?ixlib=rb-1.2.1&amp;q=80&amp;cs=tinysrgb&amp;fm=jpg&amp;crop=entropy" style="object-position:center 50%"/><div class="page-header-icon page-header-icon-with-cover"><span class="icon">🤖</span></div><h1 class="page-title">Instructions_developpeur</h1></header><div class="page-body"><p id="6d0f909d-a78a-41d3-b991-15084b13a4bc" class="">Projet en classe de ROB3 - 2021-2022 - ALONSO Benito et SHLYKOVA Olga</p><hr id="38701dbe-41ba-479e-8875-4a3b27b7cfac"/><p id="36b6978d-35af-4112-913a-f2453aef00a9" class="">
+</p><p id="c54ae29c-b77b-400b-a498-fa849b8b42e3" class="">Dans ce fichier, nous détaillerons les différentes fonctions utilisées et notes importantes afin de comprendre la construction du code, nous vous conseillons vivement du lire les commentaires interne aux fichiers qui permettront de compléter les explications qui suivent.</p><nav id="babbb368-657e-46b3-ad1d-7b9d61771393" class="block-color-gray table_of_contents"><div class="table_of_contents-item table_of_contents-indent-0"><a class="table_of_contents-link" href="#41f85b18-0e6b-4040-b20e-4e49d08b9722">🎨 📷 Figure imposée - suivis de couleur </a></div><div class="table_of_contents-item table_of_contents-indent-1"><a class="table_of_contents-link" href="#ca47444b-5f7e-4027-a43a-f9ab0499ea2f">Suivis et détection de couleur </a></div><div class="table_of_contents-item table_of_contents-indent-2"><a class="table_of_contents-link" href="#7524d079-9bd9-4434-b918-9dece72bce24">- Librairies</a></div><div class="table_of_contents-item table_of_contents-indent-2"><a class="table_of_contents-link" href="#aefecb23-2c72-42a4-8d84-7178b9ec1494">- Namespaces</a></div><div class="table_of_contents-item table_of_contents-indent-2"><a class="table_of_contents-link" href="#df0386e9-0fbf-454b-9fc9-c294d1c5a30a">- #define et tailles des fenêtres</a></div><div class="table_of_contents-item table_of_contents-indent-2"><a class="table_of_contents-link" href="#2ce73513-67d6-469b-b7e3-54255af3d44e">- Fonction on_mouse_click</a></div><div class="table_of_contents-item table_of_contents-indent-2"><a class="table_of_contents-link" href="#d7e5a295-aa18-480f-951d-44db6be9eb85">- Fonction ecriture</a></div><div class="table_of_contents-item table_of_contents-indent-2"><a class="table_of_contents-link" href="#d49b913a-1eab-4ab1-a851-2cbf8c693196">- Fonction main </a></div><div class="table_of_contents-item table_of_contents-indent-1"><a class="table_of_contents-link" href="#e594a67a-32d2-42ee-8f44-00cfbba8959c">Code servomoteur </a></div><div class="table_of_contents-item table_of_contents-indent-2"><a class="table_of_contents-link" href="#21197ad7-1229-4f99-9e78-fd03f42d7066">- Initialisations</a></div><div class="table_of_contents-item table_of_contents-indent-2"><a class="table_of_contents-link" href="#9e845bce-5b46-4fd8-b119-f78514be4d94">- Fonction main</a></div><div class="table_of_contents-item table_of_contents-indent-0"><a class="table_of_contents-link" href="#c6d41fcb-b2ab-4c88-ae93-359a7b0c11f5">👪 📷 Figure libre - détection de visage et création de filtres variés et ludiques</a></div><div class="table_of_contents-item table_of_contents-indent-1"><a class="table_of_contents-link" href="#3273a93d-8e61-4728-ad48-1d0a0438c8c6">- Librairies</a></div><div class="table_of_contents-item table_of_contents-indent-1"><a class="table_of_contents-link" href="#80d4d6ef-be10-4783-9aa7-8eafc1768e74">- Namespace</a></div><div class="table_of_contents-item table_of_contents-indent-1"><a class="table_of_contents-link" href="#cd25a7bb-d7df-4820-bb15-86121c9930b4">- #define</a></div><div class="table_of_contents-item table_of_contents-indent-1"><a class="table_of_contents-link" href="#154b6835-722c-4a8d-b7fd-f987040a49b7">- Detection de visage</a></div><div class="table_of_contents-item table_of_contents-indent-1"><a class="table_of_contents-link" href="#8863f384-9873-4bbd-802b-fbe4e84f631b">- Fonction écriture</a></div><div class="table_of_contents-item table_of_contents-indent-1"><a class="table_of_contents-link" href="#a662c21e-cb49-4f6a-b848-a3cd34a94abc">- Utilisation d’une structure complexe : Tableau 2D pour gestions des filtres et positions </a></div><div class="table_of_contents-item table_of_contents-indent-1"><a class="table_of_contents-link" href="#2bcb33f7-d020-4d75-9c17-dd6eabac175e">- Fenêtre des boutons Gtk</a></div><div class="table_of_contents-item table_of_contents-indent-1"><a class="table_of_contents-link" href="#49c3077d-61f1-4c54-a9a1-ad45283931c2">- Application des filtres</a></div><div class="table_of_contents-item table_of_contents-indent-1"><a class="table_of_contents-link" href="#00c8544e-ab5b-42bf-8e9b-1fe52efbac00">- main</a></div></nav><h1 id="41f85b18-0e6b-4040-b20e-4e49d08b9722" class="block-color-blue">🎨 📷 Figure imposée - suivis de couleur </h1><hr id="7a9a50e8-e320-4258-94c0-ddc54c019ea6"/><p id="f05daff0-edcf-4d47-b94a-80b689451edf" class="">Organisation du dossier</p><figure id="2f596616-129f-4c2a-be0b-78f561816ead" class="image"><a href="Instructions_developpeur%202f596616129f4c2abe0b78f561816ead/Untitled.png"><img style="width:1008px" src="Instructions_developpeur%202f596616129f4c2abe0b78f561816ead/Untitled.png"/></a></figure><h2 id="ca47444b-5f7e-4027-a43a-f9ab0499ea2f" class="block-color-blue">Suivis et détection de couleur </h2><h3 id="7524d079-9bd9-4434-b918-9dece72bce24" class="">- Librairies</h3><p id="5efbae1b-7f7c-4246-873b-7344c87dc816" class="">Les librairies includes de départ sont les suivantes:</p><pre id="f99f4f3f-8cb1-4a3c-b49b-6f562fd7215e" class="code"><code>#include &lt;iostream&gt;        //librairies de base en c++ 
+#include &lt;string&gt;
+#include &lt;math.h&gt;
+#include &lt;stdio.h&gt; 
+
+#include &lt;opencv2/opencv.hpp&gt;  //librairies opencv 
+#include &lt;opencv2/videoio.hpp&gt;
+#include &lt;opencv2/highgui.hpp&gt;
+#include &lt;opencv2/imgproc.hpp&gt;</code></pre><h3 id="aefecb23-2c72-42a4-8d84-7178b9ec1494" class="">- Namespaces</h3><pre id="6f087273-84bf-4770-b24e-1ea74206775d" class="code"><code>using namespace cv; //lié à opencv
+using namespace std; //lié à la gestion des string en c++</code></pre><h3 id="df0386e9-0fbf-454b-9fc9-c294d1c5a30a" class="">- #define et tailles des fenêtres</h3><pre id="e14fd3ef-0e6e-4923-a90a-57faab06362a" class="code"><code>#define COLOR_LIGNES 80 //définis la hauteur de la fenêtre qui permet de vérifier la couleur sélectionnée
+#define COLOR_COLONNES 250 //pour la largeur</code></pre><p id="b1e22e35-725d-47a7-956e-0d205375b233" class="">Ces deux paramètres sont définis avec un #define pour faciliter leur modification si l’on souhaite aumgenter/diminuer la taille de l’onglet.</p><p id="869622e8-6bd5-411a-8e14-8145ba3a9f49" class="">Ci-dessous la capture de la “fenêtre” correspondante</p><figure id="05535893-d01b-44e1-95cd-307cf923c727" class="image"><a href="Instructions_developpeur%202f596616129f4c2abe0b78f561816ead/Untitled%201.png"><img style="width:247px" src="Instructions_developpeur%202f596616129f4c2abe0b78f561816ead/Untitled%201.png"/></a></figure><p id="49baae3a-157b-40ff-9eb5-b7ab204205d8" class="">
+</p><p id="e7cb6de5-d30c-4a08-8055-9d60b18e3e69" class="">Concernant la taille de la webcam, nous n’utilisons pas de de #define car la webcam est par défaut de 640x480 et l’utilisateur ne doit pas avoir la main dessus. Les réferénces concernant les rectangles définis pour gérer la position de l’objet et activer ou non les servos on aussi été définis en fonction de cette taille de 640x480.</p><p id="4ac4fa6f-bac5-4e34-9d58-d67dcb6d3dfb" class="">Pour gérér la largeur du rectangle central en revanche, le paramètre delta à été introduit, par défaut <code>delta=60</code></p><figure id="b03e6ea5-7756-4bea-a5e0-0812d4531bbc" class="image"><a href="Instructions_developpeur%202f596616129f4c2abe0b78f561816ead/Untitled%202.png"><img style="width:645px" src="Instructions_developpeur%202f596616129f4c2abe0b78f561816ead/Untitled%202.png"/></a></figure><p id="6e1e5390-3a28-4a73-b65c-dfe3a3bba380" class="">Sur la fenêtre Original qui montre le feed en temps réel de la webcam, avec <code>delta=60</code> les rectangles sont montrés ci-dessus.                  Ainsi lorsque le centre de l’objet sera dans le carré central on considèrera que l’objet est bien centré, sinon on bougera les servo moteur pour suivre l’objet et le recentrer (si paramètre <code>val_index_carte=1</code> c’est à dire que l’utilisateur à indiqué que la carte est bien connectée au PC).</p><p id="f1019a06-59f1-4a5c-831d-03c9fce03d1f" class="">
+</p><h3 id="2ce73513-67d6-469b-b7e3-54255af3d44e" class="">- Fonction on_mouse_click</h3><p id="43d1280f-f89a-46c4-b47c-f8aeb940c047" class="">Cette fonction, comme son nom l’indique permet de détecter un click souris et affiche alors une petite fenêtre (cf. explication ci-dessus) avec la valeur en HSV et en RGB du pixel. </p><pre id="d57fd72a-bf3f-4364-abbd-b5e7688ee7e5" class="code"><code>void on_mouse_click(int event, int x, int y, int flags, void* ptr) 
+
+- event : entier qui contient le type d&#x27;evennement à tester 
+					dans la fonction, on teste -&gt; if (event == cv::EVENT_LBUTTONDOWN) { ... }
+- x : position en x de l&#x27;evennement
+- y : position en y de l&#x27;evennement
+- flags : flag de l&#x27;evennement
+- ptr : en c++ les fonctions n&#x27;ayant pas accès à des variables définies dans le main, il faut passer en 
+				paramètre un pointeur ici vers la matrice snapshot
+
+Appel de la fonction dans le main:
+cv::setMouseCallback(&quot;Control&quot;, on_mouse_click, &amp;snapshot);</code></pre><p id="b4212773-27ee-4453-8067-40ce902e71f0" class="">
+</p><p id="3baca7c0-3130-4988-808a-259263284e05" class="">Explications des parties clées de la fonction:</p><p id="22887bdf-df40-4b0c-bf1e-e89d747e53a6" class=""><code>cv::Mat* snapshot = (cv::Mat*)ptr</code> Cast du ptr donné en argument dans la matrice snapshot</p><p id="e4df09b5-b3d9-4f0c-b247-7489996369ac" class=""><code>cv::Vec3b pixel = snapshot-&gt;atcv::Vec3b(cv::Point (x, y));</code> Traitement du pixel en un Vec3b qui est un vecteur avec trois élements et récupération du pixel avec <code>snapshot-&gt;at</code> qui demande un type <code>cv::Vec3b</code> et le point en question.</p><p id="596049db-2e94-47b7-bb3a-2ba932876f10" class=""><code>int b, g, r;  b = pixel[0]; g = pixel[1]; r = pixel[2];</code> Récupération des données du vec3b pixel</p><p id="e634c1a3-f098-4e47-97fd-85245ed87bad" class="">Il y a ensuite des affichages avec <code>cv::putText(Matrice source, “texte”, cv::Point(x,y), cv::FONT_HERSHEY_SIMPLEX, int épaisseur, couleur du texte avec cv::Scalar(i,j,k)</code></p><p id="957ce89f-52f4-447b-987b-8045df794338" class="">
+</p><p id="29e6beb1-f046-482b-8689-55120f64b2fe" class="">Pour afficher le pixel en HSV, il faut d’abord convertir l’image en HSV avec:</p><pre id="de0aa89a-ea54-41d6-ad33-cf9b987d56b3" class="code"><code>cv::Mat image=(*snapshot).clone();
+cv::Mat HSV;
+cv::Mat RGB=image(cv::Rect(x,y,1,1)); //permet de convertir la zone cliquée uniquement=moins de ressources necessaires
+cv::cvtColor(RGB, HSV,COLOR_BGR2HSV);</code></pre><p id="8d979036-25bf-419c-bf89-a1e2a982e763" class="">Comme pour le RGB, on récupère les infos du pixel:</p><p id="8126220c-a40d-4040-8c79-6d579ae95336" class=""><code>Vec3b hsv=HSV.at&lt;Vec3b&gt;(0,0); int H=hsv.val[0]; int S=hsv.val[1]; int V=hsv.val[2];</code></p><p id="fe47c713-0233-4c11-900d-43469b3ea7e0" class="">Enfin il faut update les trackbar pour correspond aux valeurs en HSV avec <code>cv::setTrackbarPos(&quot;BasH&quot;, &quot;Control&quot;,H-10);</code> ou encore <code>cv::setTrackbarPos(&quot;HautS&quot;, &quot;Control&quot;,S+tolerancee);</code> ici la tolérance choisie est de 70 mais est réglable dans le code en fontion de l’environnement de test.</p><p id="884de845-ac6e-4315-a7f1-359c39439a28" class="">
+</p><p id="231429a9-d1b6-4b80-a2cb-f53d88f4ee23" class="">Enfin pour la couleur de fond de la petite fenêtre:</p><pre id="86814313-559d-4387-844c-247dbe940d9c" class="code"><code>cv::Mat colorArray;
+colorArray = cv::Mat(COLOR_LIGNES, COLOR_COLONNES, CV_8UC3, cv::Scalar(b,g,r)); //b,g,r définis plus haut</code></pre><p id="ae28f760-c215-464e-bd82-16ee9fc9bd19" class="">Le résultat final nous donne:</p><figure id="cf736629-9dd5-4def-bc7d-ae877d86df58" class="image"><a href="Instructions_developpeur%202f596616129f4c2abe0b78f561816ead/Untitled%203.png"><img style="width:253px" src="Instructions_developpeur%202f596616129f4c2abe0b78f561816ead/Untitled%203.png"/></a></figure><h3 id="d7e5a295-aa18-480f-951d-44db6be9eb85" class="">- Fonction ecriture</h3><pre id="7ade7a02-06c6-4add-814f-99c19ae72ae8" class="code"><code>void ecriture(char lettre,int nb)
+- lettre : en fonction de la position du centre de 
+					 l`objet,on appelle la fonction avec soit &quot;r&quot;,&quot;s&quot;,&#x27;&quot;w&quot;,&quot;a&quot; ou &quot;d&quot;
+- nb : paramètre de bouclage de la fonction, afin d&#x27;ecire plusieurs fois la même lettre et accélérer 
+			 mouvement des des servomoteurs
+
+Dans le main:
+char shaut=&#x27;w&#x27;;
+char sbas=&#x27;s&#x27;;
+char sgauche=&#x27;d&#x27;; //inversé car l&#x27;image est en miroir
+char sdroite=&#x27;a&#x27;;
+
+Appel de la fonction dans le main:
+else if(keyVal==114){//r = reset position des servos
+			ecriture(&#x27;r&#x27;,1);					
+}
+ou encore
+ecriture(sbas,1); //baisser la caméra
+ecriture(sgauche,2); //tourner la caméra vers la gauche</code></pre><p id="08f319a2-3e2b-4e67-a0d6-fabdf00b51a7" class="">Explications des parties clées du code:</p><p id="3248c62c-04bb-4679-8fb3-7c35a0cff240" class="">La fonction va créer un objet de type <code>FILE* fp</code> et va ensuite chercher à ouvrir la carte (considérée comme un fichier sur Linux) : <code>fp = fopen (&quot;/dev/ttyACM0&quot;, &quot;w&quot;);</code> </p><p id="92de5a66-d512-4a97-a74d-a5a2771a497b" class="">Ensuite, on écris sur la carte la lettre correspondante avec <code>fprintf(fp, &quot;%c&quot;, lettre)</code> Le code sur la carte est alors capable de lire cette lettre et d’y associé un mouvement sur les servosmoteurs (voir partie <mark class="highlight-blue">Code servomoteur</mark>)</p><p id="0ff4ca60-b7c9-4117-9524-fa6ce4f6ed3d" class="">Enfin, on ferme le fichier avec <code>fclose(fp)</code></p><p id="73ff845d-92ed-41b7-8787-fd13b5f562bc" class="">
+</p><h3 id="d49b913a-1eab-4ab1-a851-2cbf8c693196" class="">- Fonction main </h3><p id="ddec2cef-3abd-43cb-a1dd-c17ab5d87cb3" class="">Dans les grandes lignes:</p><p id="61dd1ab1-89c2-43e9-8e10-a89019775ccb" class=""><code>cv::VideoCapture capture(val_index_cam)</code> et <code>capture.read(imgOriginal)</code> permettent la récupération du feed de la webcam</p><p id="5f7e2d00-47a1-49cd-9ae1-0c9b55ee9b4d" class=""><code>cv::namedWindow(&quot;Control&quot;);</code> déclaration de la fenêtre de control</p><p id="8aed57f9-1aaf-4ec6-aad7-f1525f270af8" class=""><code>cv::createTrackbar(&quot;BasH&quot;, &quot;Control&quot;, 0, 179,0);</code> création des trackbar dans la fenetre de control, prends en paramètres</p><p id="ec9c87f6-9f3f-4912-95ff-04eb511ecd05" class="">Et ensuite une boucle while infinie qui en permanence teste si </p><pre id="8eec815c-d1e5-4f3d-88ca-bb3098a464f7" class="code"><code>if (!capture.read(imgOriginal)) {
+			break;  //arrêt si deconnextion de la caméra
+}
+keyVal = cv::waitKey(1) &amp; 0xFF;
+if (keyVal == 113) {    //pour quitter = q
+			break;
+}</code></pre><p id="4eeca9ce-ddaf-4aaa-9360-803db3ab72cb" class="">Pour ensuite créer image Thresholded il faut d’abord convertir l’image en mode HSV cv::cvtColor(imgOriginal, imgHSV, COLOR_BGR2HSV)                        puis utiliser la fonction inrange d’OpenCv</p><pre id="0e692da0-6867-4237-99c7-a9553208ffcf" class="code"><code>cv::inRange(imgHSV, 
+						cv::Scalar(cv::getTrackbarPos(&quot;BasH&quot;,&quot;Control&quot;),cv::getTrackbarPos(&quot;BasS&quot;,&quot;Control&quot;),cv::getTrackbarPos(&quot;BasV&quot;,&quot;Control&quot;)), 
+						cv::Scalar(cv::getTrackbarPos(&quot;HautH&quot;,&quot;Control&quot;),cv::getTrackbarPos(&quot;HautS&quot;,&quot;Control&quot;),cv::getTrackbarPos(&quot;HautV&quot;,&quot;Control&quot;)), 
+						imgThresholded);
+//Cette fonction permet d&#x27;isoler les pixels entres les ranges indiquées</code></pre><p id="be16628a-fd79-42ea-b38b-6edd34b36dad" class="">
+</p><p id="caf61edf-02ce-40d9-9fb4-2aabddcd6b1f" class="">Pour assurer la bonne analyse on est amené à faire des traitement de l’image avec:</p><pre id="bb23584e-d44d-4e90-811f-01487d444c24" class="code"><code>cv::erode(imgThresholded, imgThresholded, cv::getStructuringElement(MORPH_ELLIPSE, cv::Size(5, 5)));
+cv::dilate(imgThresholded, imgThresholded, cv::getStructuringElement(MORPH_ELLIPSE, cv::Size(5, 5)));
+// Morphological Opening - enleve petits objet en fond
+
+et 
+cv::dilate(imgThresholded, imgThresholded, cv::getStructuringElement(MORPH_ELLIPSE, cv::Size(5, 5)));
+cv::erode(imgThresholded, imgThresholded, cv::getStructuringElement(MORPH_ELLIPSE, cv::Size(5, 5)));
+// Morphological Closing - enleve petits trous en fond</code></pre><p id="eed621c7-c054-4c85-a796-f9e77ad73545" class="">
+</p><p id="e7add944-d76a-425d-993e-4a93563217a9" class="">Pour déterminer le centre/barycentre de l’objet isolé on utilise les moments:</p><pre id="0406d4a4-b163-4c93-870d-e6c71044ea8f" class="code"><code>cv::Moments oMoments = cv::moments(imgThresholded);
+
+double dM01 = oMoments.m01; double dM10 = oMoments.m10; double dArea = oMoments.m00;
+
+et le centre de l`objet s`obtient avec: int posX = dM10 / dArea;  int posY = dM01 / dArea;
+
+pour tracer un cercle autour de l`objet: 
+int R = sqrt((dArea / 255) / 3.14); //rayon de l&#x27;objet en question
+cv::circle(imgOriginal, cv::Point(posX, posY), R, cv::Scalar(0, 0, 255), 2); //cercle autour objet</code></pre><p id="31488a98-2753-4661-b1df-27656d42ad29" class="">On va ensuite tester <code>if (dArea &gt; 70000)</code> car en dessous de 70 000, on peux considérer que c’est juste du bruit.</p><p id="ae9c871d-e120-479c-bb5d-c9430aeddc86" class="">
+</p><p id="60e8aabb-f782-4b20-9c1a-ac8ac840fca3" class="">→ Grâce à tout cela on peux alors tracker l’objet selectionné et envoyer les commandes aux servos en fontion de la positionner récupérée de l’objet.</p><h2 id="e594a67a-32d2-42ee-8f44-00cfbba8959c" class="block-color-blue">Code servomoteur </h2><h3 id="21197ad7-1229-4f99-9e78-fd03f42d7066" class="">- Initialisations</h3><pre id="affa42f1-ee34-4fae-8d15-928b32273bb3" class="code"><code>#include &quot;mbed.h&quot; //inclusion de la librairie Mbed
+#include &quot;LittleFileSystem.h&quot;  //inclusion de la librairie liée au traitement de fichiers
+
+#define STEP 2 //on définis le pas entre chaque incrémentation des valeurs envoyées au servos
+
+PwmOut servoCam(P2_4); //on définis chaque servo de type Pwmout (cf. librairie Mbed)
+PwmOut servoBase(P2_3);
+
+static BufferedSerial pc(USBTX, USBRX); // tx, rx   //on cennecte la carte au portsérie</code></pre><h3 id="9e845bce-5b46-4fd8-b119-f78514be4d94" class="">- Fonction main</h3><p id="8b485a09-0da3-410b-a724-67d88aaf4cd5" class="">On définit d’abord les positions de départ des servos: <code>float offsetB=1500; float offsetC=1500;  </code></p><p id="f983f0d4-f935-4a4c-bfab-cd31136a21c0" class="">On définit ensuite le caractère qui permettra de lire les lettres envoyées sur le PortSérie de la carte: <code>char *c = new char[1];</code></p><p id="4f703348-7363-4302-bebd-058fad727a82" class="">Dans une boucle while(1):<div class="indented"><p id="230d82f8-b490-401e-a7e6-32d157e62cb4" class="">- On envoie sous forme de signal PWM aux servo-moteurs les valeurs de offsetC et offsetB: <code>servoCam.pulsewidth_us(offsetC); servoBase.pulsewidth_us(offsetB);</code></p><p id="5400a31e-9d57-4377-9939-14351d765d46" class="">- On va ensuite lire la lettre envoyée: <code>pc.read(c, sizeof(c));</code> puis l’écrire: <code>pc.write(c, sizeof(c));</code>  En fontion de la lettre on update offsetC ou offsetB de + ou - le STEP par exemple: <code>if (*c == &#x27;w&#x27;) { offsetC-=STEP; }</code></p></div></p><p id="6d5dc52d-21ad-4adb-85bc-f2f7ae2dd39f" class="">
+</p><h1 id="c6d41fcb-b2ab-4c88-ae93-359a7b0c11f5" class="block-color-blue">👪 📷 Figure libre - détection de visage et création de filtres variés et ludiques</h1><hr id="1a63d956-395c-4997-89c0-471c942cc071"/><p id="440dd4fe-9e8a-4dbb-9ef9-bff6cb9d04f5" class="">Organisation du dossier</p><figure id="94ccf186-b15d-443c-8749-40cf00d7f96b" class="image"><a href="Instructions_developpeur%202f596616129f4c2abe0b78f561816ead/Untitled%204.png"><img style="width:1392px" src="Instructions_developpeur%202f596616129f4c2abe0b78f561816ead/Untitled%204.png"/></a></figure><h2 id="3273a93d-8e61-4728-ad48-1d0a0438c8c6" class="">- Librairies</h2><p id="cf15a9c9-ac60-48e6-afdf-b1d55eec4a24" class="">Pour détecter le visage, nous allons utiliser la bibliothèque <code>dlib</code> qui nous permet de placer les points en temps réel sur un visage apparent dans la caméra.</p><p id="a65e9090-5ac7-46a1-92e1-0a03e34d3ec2" class="">Les librairies inclues sont donc :</p><pre id="26771a4e-5650-48ae-8255-0baa2a76a149" class="code code-wrap"><code>#include&lt;dlib/image_processing/frontal_face_detector.h&gt; //librairies dlib
+#include&lt;dlib/image_processing.h&gt;
+#include&lt;dlib/opencv.h&gt;
+
+#include&lt;opencv2/imgproc.hpp&gt; //librairies opencv
+#include&lt;opencv2/highgui.hpp&gt;
+
+#include &lt;gtk/gtk.h&gt; //librairie gtk
+
+#include &lt;stdlib.h&gt; //librairies de base C++
+#include &lt;iostream&gt; 
+#include &lt;string&gt;
+#include &lt;math.h&gt;
+#include &lt;stdio.h&gt;
+#include &lt;time.h&gt;</code></pre><h2 id="80d4d6ef-be10-4783-9aa7-8eafc1768e74" class="">- Namespace</h2><pre id="427b9e8a-8880-4d75-89bd-f1294252013e" class="code"><code>using namespace cv;
+using namespace std;
+using namespace dlib;</code></pre><h2 id="cd25a7bb-d7df-4820-bb15-86121c9930b4" class="">- #define</h2><p id="ceee5d9c-2e7f-45b2-a4e1-c354b7bce372" class="">Dans les define ont définis d’abord les tailles des images qui serviront pour les filtres par exemple: </p><p id="c0c59086-4e2b-4d85-9794-a0b0ab775fef" class=""><code>#define WIDlunettes  2498  et   #define LENlunettes  5885   //taille de l&#x27;image lunettes</code></p><p id="b4f406fb-d12d-4b43-83db-5f7f4b9a2811" class="">La taille du tableau DATA pour la gestion des flags pour les filtres (voir partie utilisation d’une structure complexe)</p><p id="aa0ac696-fe58-44bd-83f1-d3e2074b4ac0" class=""><code>#define NUMflags    9
+ #define NUMdata     7</code>   A modifier en fonction du nombre de filtres voulus et la taille des données nécessaires.</p><p id="494e20b2-0801-4681-b94b-524a99ffb828" class="">Et les flags pour le bouton suvis_visage ou encore l’affichage du Label</p><h2 id="154b6835-722c-4a8d-b7fd-f987040a49b7" class="">- Detection de visage</h2><p id="293da2d4-56c2-41af-906d-ea9aa009a4e5" class="">3 fonctions sont nécessaire pour détecter le visage et dessiner les contours correspondants à la caméra: </p><pre id="49c2b78c-885d-44cb-bd67-64616de622ff" class="code"><code>void dessineligne(cv::Mat &amp;image, full_object_detection landmarks, int pointdebut, int pointfin, bool estferme);
+
+------------Paramètres------------ 
+Mat &amp;image pour le feed de la webcam
+full_object_detection Landmarks de dlib qui les 68 points de référence définis avec la librairie lorsqu&#x27;un visage est détecté
+int Pointdebut qui correspond au premier point pour dessinner la ligne
+int Pointfin qui correspond au dernier point
+bool estferme pour savoir si la polyline devra être fermée ou non
+
+------------Sortie------------
+Dessine une ligne entre les points de référence du visage (voir photo landmark.png dans le dossier)
+
+------------Dans le code------------
+on récupère les points de référence entre Pointdebut et Pointfin avec xx=landmarks.part(i).x(); yy=landmarks.part(i).y();
+et la fonction points.push_back(cv::Point(xx, yy)); permet d&#x27;ajouter le nouveau point à la suite du vecteur
+
+Pour déssiner une ligne on fait alors cv::polylines(image, points, estferme, cv::Scalar(255, 255, 0), 1, 16);</code></pre><p id="71ad47bb-16e9-4234-90f5-7a69acd4e3d4" class="">
+</p><pre id="1d8dd747-995e-4d66-9235-0e60d55c9562" class="code"><code>
+void dessinesleslignes(cv::Mat &amp;image, full_object_detection landmarks);
+
+------------Paramètres------------
+Mat &amp;image feed de la webcam
+full_object_detection landmarks cf. points de référence
+
+------------Sortie et but------------
+Faciliter l&#x27;appel de la fonction dessineligne en appelant la fonction avec tous les points de référence pour dessiner 
+tous les contours du visage
+
+------------Dans le code par exemple------------
+dessineligne(image, landmarks, 0, 16,false);     //ligne de la machoire
+dessineligne(image, landmarks, 36, 41, true);       //oeil gauche</code></pre><p id="8ca94209-3dac-4ebc-a2e7-dae0ca64439d" class="">
+</p><pre id="72a47363-43b0-4c62-98a3-af0e69689c29" class="code"><code>void landmarks_dessineleslignes(Mat &amp;img_originale, frontal_face_detector faceDetector, shape_predictor landmarkDetector, 
+std::vector&lt;dlib::rectangle&gt; &amp;faces, float resizeScale, int skipFrames, int frameCounter,Mat &amp;img_neutre,
+int* dataFiltre1, int* dataFiltre2, int* dataFiltre3, int* dataFiltre4, int* dataFiltre5, int* dataFiltre6, int* dataFiltre7)
+
+------------Paramètres------------
+Mat &amp;image - pour le feed de la webcam
+
+frontal_face_detector faceDetector - objet dlib pour détecter un visage à l&#x27;écran
+
+shape_predictor landmarkDetector - dessine de manière brute la forme du visage pour y placer les points de référence
+
+objet rectangle dlib - permet de détecter plusieurs visages en même temps, notamment grâce à un for(int i=0; i&lt;faces.size(); i++)
+											 ou faces.size correspond au nombre de visages détectés dans la webcam
+
+float resizescale - pour améliorer  la reconnaissance il est utile de diminuer la taille de l&#x27;image
+
+int skipFrames - pour limiter le nombre de ressources, on ne fait la détection que par interval de skipframes
+                 dans le code: if(frameCounter % skipFrames == 0){
+			                             faces = faceDetector(dlibImageSmall);
+                               }
+Mat &amp;imgneutre - pour garder une copie de la webcam sans les lignes de détection dessus
+
+int *dataFiltre - tableau pour gérer les flag des filtres et acitver ou non le message &quot;Filtre x actif&quot;
+
+------------Sortie------------
+Affichage de fenêtres
+
+------------Appel dans le main------------
+landmarks_dessineleslignes  (img_originale, faceDetector, landmarkDetector, faces, resizeScale, skipFrames, frameCounter,img_neutre,
+                              DATA[1], DATA[2], DATA[3], DATA[4], DATA[5], DATA[6], DATA[7]);</code></pre><p id="23720442-4453-43a4-943c-c8d528addda7" class="">La dernière fonction sert à plusieurs fins : elle permet de s’assurer que les points landmark trouvés sur le visage sont bien au bon endroit, mais aussi de mettre à jour en temps réel les données nécessaires au bon fonctionnement des filtres.</p><p id="2c1aa743-92d3-44f0-9c7e-c700cdb7f37e" class="">
+</p><p id="4ee5c932-750a-4eb3-8aef-fa03dfc83a6e" class="">Autres parties importantes de la fonction:</p><p id="dc8c7c97-9796-4a8c-b23f-c875509cc080" class=""><code>dlib::rectangle rect(ptgauche,pthaut,ptdroite,ptbas);  </code>      Pour définir un rectangle autour du visage détecté
+
+<code>full_object_detection faceLandmark = landmarkDetector(dlibImage, rect);</code> Pour ne détecter les points de référence que dans la partie rectangle du visage justement</p><h2 id="8863f384-9873-4bbd-802b-fbe4e84f631b" class="">- Fonction écriture</h2><p id="9552b27b-4d5a-435c-9060-4e005abfd96b" class="">Même fonctionnement que pour la partie suivis_couleur</p><h2 id="a662c21e-cb49-4f6a-b848-a3cd34a94abc" class="">- Utilisation d’une structure complexe : Tableau 2D pour gestions des filtres et positions </h2><p id="c82f4cd5-960c-404d-acc1-4fb4643110cc" class="">Tous les information concernant l’état actuel du programme : activation des filtres, mode photo, arrêt… seront stocké dans le tableau 2D DATA initialisé ainsi :</p><pre id="0fc309ad-bb0c-40d9-914d-561f5da6fdbb" class="code code-wrap"><code>int DATA[NUMflags][NUMdata];    
+for (int i=0; i&lt;NUMflags; i++)    
+for (int j=0; j&lt;NUMdata; j++)   DATA[i][j]=0;   //tous les flag et les données sont initialisés à 0</code></pre><p id="8cbb5946-22b7-4cfa-81e4-63ce75a2b876" class="">Ici, <code>NUMflags </code>représente le nombre des fonctionnalités qu’on pourra opérer avec les boutons dans le programme : le nombre des filtres + bouton screenshot +  bouton arrêt; chaque colonne représente donc l’état de la fonctionnalité en question. <code>NUMdata </code>est l’espace dédié au stockage de toutes les données pertinentes à la fonctionnalité.</p><p id="3b7f5594-11d7-4ee4-bba5-c8744736653f" class="">La première ligne, pour toutes les fonctionnalités est occupée par le flag d’activation; pour les filtres la deuxième ligne représente le flag de suppression et le reste de l’espace est rempli par les données pertinents pour le fonctionnement du filtre. Par exemple, pour le filtre “jeu avec le nez” ces données seront les coordonnées du nez en pixels et l’état du timer.</p><p id="62f8306d-38b2-4914-a6da-e0f92a28cbcc" class="">Voici donc la carte obtenue :</p><figure id="0fc8202a-e0e4-44f6-89ca-9d96ed421b2d" class="image"><a href="Instructions_developpeur%202f596616129f4c2abe0b78f561816ead/carteDATA.png"><img style="width:512px" src="Instructions_developpeur%202f596616129f4c2abe0b78f561816ead/carteDATA.png"/></a></figure><p id="bbc47011-86e1-42b5-84dd-d8fa5a0b84cf" class="">Cette base des données est nécessaire pour le fonctionnement du programme, car les données qu’elle représente sont utilisés est modifiés par plusieurs fonctions à la fois. On évite ainsi de définir les variables globales et on s’en sert que en tant que pointeurs vers les valeurs.</p><h2 id="2bcb33f7-d020-4d75-9c17-dd6eabac175e" class="">- Fenêtre des boutons Gtk</h2><p id="2698efe6-4ed9-4836-8037-9601d5bf6715" class="">Pour déclarer un bouton avec Gtk la manipulation est la suivante</p><pre id="78a199c8-d80b-4ff2-8dbe-4ecaf9346595" class="code"><code>Dans le main:
+
+GtkWidget* pWindow; //pour définir la fenêtre de selection des filtres
+GtkWidget *pVBox; //pour définir la box où on placera les boutons</code></pre><p id="98292603-7cee-4ff7-a5b3-dd7e1950bc34" class="">Il y a ensuite des initialisations pour que tout fonctionne correctement</p><pre id="7d87de85-7a2d-4ddb-9c19-a56bf568479b" class="code"><code>Dans le main:
+
+// Initialisation de GTK
+gtk_init(&amp;argc,&amp;argv);
+
+// Création de la fenetre principale (titre et taille de la fenetre)
+pWindow = gtk_window_new(GTK_WINDOW_TOPLEVEL);
+gtk_window_set_title(GTK_WINDOW(pWindow), &quot;Selection de l&#x27;effet&quot;);
+gtk_window_set_default_size(GTK_WINDOW(pWindow), 320, 200);
+gtk_window_move(GTK_WINDOW(pWindow), img_originale.cols, 0);
+    
+// Connexion du signal de fermeture de la fenetre au fait de quitter le programme
+g_signal_connect(G_OBJECT(pWindow), &quot;destroy&quot;, G_CALLBACK(gtk_main_quit), NULL);
+
+// Creation d&#x27;une verticale box qu&#x27;on ajoute à la fenetre principale
+// Attention ! La fenetre principale GTK ne peut contenir qu&#x27;un seul widget
+// Il faut ensuite utiliser des vbox et des hbox pour positionner les widgets à l&#x27;intérieur
+pVBox = gtk_vbox_new(TRUE, 0);    
+gtk_container_add(GTK_CONTAINER(pWindow), pVBox);</code></pre><p id="6add911c-90ba-4441-8f57-a8938254850e" class="">
+</p><p id="aacf058c-fe6d-4251-9eae-6982772c711b" class="">Pour créer et insérer un nouveau bouton c’est ensuite tout le temps la même démarche:</p><pre id="e0f8daf1-d72c-41da-a596-b0d127236766" class="code"><code>Example avec le filtre miroirdroit, dans le main:
+
+GtkWidget *pButtonmiroirdroit; //declaration du bouton
+pButtonmiroirdroit = gtk_button_new_with_label(&quot;Filtre miroir droite&quot;); //création
+
+gtk_box_pack_start(GTK_BOX(pVBox), pButtonmiroirdroit, TRUE, FALSE, 0);
+// Insertion des widgets dans la GtkVBox 
+// L&#x27;ordre d&#x27;insertion des éléments dans la vBox correspond à l&#x27;ordre d&#x27;apparition des éléments dans la fenetre
+
+Il faut ensuite activer le callback sur le bouton:
+/* Connexion du signal &quot;clicked&quot; du GtkButton */
+g_signal_connect(G_OBJECT(pButtonmiroirdroit), &quot;clicked&quot;, G_CALLBACK(on_copier_button_miroirdroit), DATA[1]);
+//DATA[1] correspond aux données qui seront modifiés à l&#x27;appui du bouton</code></pre><p id="22f1a73b-79e4-4dd8-81ad-803c0147c700" class="">Dans la fonction <code>g_signal_connect</code>, nous avons passé, en tant que argument <code>DATA[i]</code> - c’est un tableau à une dimension qui représente les données de la colonne <code>i</code>, comme représenté dans la carte de <code>DATA </code>dans la section précédente.</p><p id="0d9546c7-bfe8-4229-890d-cf8c01e5940c" class="">
+</p><p id="40dc3641-840a-4f92-b9c1-15357471ff70" class="">Et il faut définir la <strong>fonction</strong> callback qui est lancée lorsque le bouton est clické</p><pre id="8412e05b-e4e3-421c-a969-e88e599e8cb3" class="code"><code>/* Fonction callback executee lors du signal &quot;clicked&quot; */
+void on_copier_button_miroirdroit(GtkWidget *pButton, gpointer data) {
+    int* DATA = (int*) data;
+    if (!DATA[0])   DATA[1]=0;
+    else            DATA[1]=1;    //gestion des flags pour les filtres
+    DATA[0]=!DATA[0];
+}
+
+------------Paramètres------------
+Le bouton en en question attaché à la fonction en question
+Le pointeur correspondant au flag à update
+
+------------Sortie------------
+Update des flags pour les différents filtres</code></pre><p id="f82a30fd-328b-425e-ba77-2c4463bc8f27" class="">Dans cet exemple là on modifie donc le flag d’activation et le flag de suppression.</p><h2 id="49c3077d-61f1-4c54-a9a1-ad45283931c2" class="">- Application des filtres</h2><p id="04482a95-80ee-4690-a8aa-7c9f0dacdf9a" class="">L’application des filtres est faite par implémentation des commandes <code>dlib</code> et <code>opencv</code>. Certains reviennent à la manipulation des images et d’autres au suivis d’un point précis et la superposition d’un image en .png</p><p id="c4b6783c-ead3-44c5-9034-f80fc42311f3" class="">On se servira de la bibliothèque <code>gtk</code> pour créer une interface graphique.</p><p id="b53d07e1-1e45-4b13-926b-d4b3af676b91" class="">Lors de la compilation, il peut y avoir des erreurs d’inclusion de GTK. Dans ce cas, il suffit d’installer OpenCV depuis la source en précisant les dépendances appropriés, comme indiqué dans README paragraphe OpenCV.</p><p id="ca021f0e-46f8-4a7c-81a5-cd7e790c77eb" class="">
+</p><p id="b7dcb6e8-e047-4a39-b400-f2ff51495343" class="">Chaque filtre est différent mais tous suivent le même principe: </p><ul id="68fafaea-ddd5-40a3-828d-28c1c01820db" class="bulleted-list"><li style="list-style-type:disc">Récupération du feed de la caméra</li></ul><ul id="e944231d-18c5-4588-a749-2c904bf8810b" class="bulleted-list"><li style="list-style-type:disc">Récupération des états des flags</li></ul><ul id="f25c70cb-bf94-4942-a8ce-cac1816dd261" class="bulleted-list"><li style="list-style-type:disc">Récupération des positions des points de référence si nécessaire</li></ul><ul id="beaaab5b-94ec-4d1d-9b3d-c3dac81d8443" class="bulleted-list"><li style="list-style-type:disc">Différentes transformations en fonction du filtre</li></ul><ul id="8c7b2d4f-018e-453c-94e2-f46fb624fee3" class="bulleted-list"><li style="list-style-type:disc">Affichage ou destruction des fenêtres en fonction des flags<h3 id="aa0e06b1-46c9-40b3-a49d-d6e49b34d2df" class="">Premier filtre : miroir droit</h3><p id="8882fd5d-ade2-423a-ad7a-d564a3814a52" class="">Le but ici est de mettre un “mirroir” au milieu du visage.</p><pre id="8c94ba69-514f-4f37-92fa-3e467252b0f4" class="code"><code>void filtre_miroirdroite(Mat &amp;img_neutre,int suprmiroirdroite, int largeurmoitievisage, int flagscreenshot) 
+{   
+		Paramètres : DATA[1][2] est occupé par la coordonnée x du centre du visage - largeurmoitievisage
+    
+		Tout d&#x27;abord on crée la fenêtre pour afficher le filtre
+
+    if(suprmiroirdroite==0 &amp;&amp; nb_visages){
+
+				Si on ne cherche pas à supprimer le filtre et il n&#x27;y a qu un seul visage détécté :
+        
+			  On coupe la partie à droite du centre du visage
+				Ensuite, on la copie et on la retourne horizontalement sur le coté gauche
+
+				On ajuste la taille de la fenêtre pour afficher les deux parties de l&#x27;image finale
+
+        if(flagtextlabel==1){
+            Ecrire le texte dans la fenêtre si ceci est demandé
+        }
+
+        Enfin, on affiche la fenêtre
+
+        if (flagscreenshot) {
+						Enregistrer un screenshot de la fenêtre dans le dossier &quot;photos&quot; si ceci est demandé
+        }
+    }
+    else if (suprmiroirdroite==1){
+        Supprimer la fenête si on reclick sur le bouton
+    }
+}</code></pre><h3 id="0addb7b4-767f-4104-ac94-4e568cb62abd" class="">Deuxième filtre : miroir gauche</h3><p id="d46705d0-8959-4002-8dcc-a83c235c72de" class="">Le fonctionnement de celui-ci est essentiellement pareil que celui du précédent, à l’exception qu’on copie la partie gauche sur la partie droite cette fois.</p><h3 id="41317457-e6e6-4ae5-9603-37dcc2eee63d" class="">Troisième filtre : filtre dessin</h3><p id="40b1ece1-f678-4f51-b165-3d900b243070" class="">Ce filtre doit transformer l’image transmise par la caméra en une version qui ressemble un “dessin”.</p><pre id="fa999468-2a0e-43e4-92d1-07c0523161c6" class="code"><code>void filtre_dessin(Mat &amp;img_neutre, int suprfiltredessin, int flagscreenshot) 
+{   
+    Tout d&#x27;abord on crée la fenêtre pour afficher le filtre
+
+    if(suprfiltredessin==0 &amp;&amp; nb_visages){ 
+       
+        Si on ne cherche pas à supprimer le filtre et il n&#x27;y a qu un seul visage détécté : 
+
+        On augmente d&#x27;abord la luminosité
+
+        On augmente l&#x27;acuité et
+				On applique le filtre dessin sur l&#x27;image prévu dans la bibliothèque OpenCV
+
+        On diminue la taille de l&#x27;image un peu pour les questions de performance
+        
+        if(flagtextlabel==1){
+            Ecrire le texte dans la fenêtre si ceci est demandé
+        }
+
+        Enfin, on affiche la fenêtre
+
+        if (flagscreenshot) {     
+            Enregistrer un screenshot de la fenêtre dans le dossier &quot;photos&quot; si ceci est demandé
+        }
+    }
+
+    else if (suprfiltredessin==1){
+        Supprimer la fenête si on reclick sur le bouton
+    }
+}</code></pre><h3 id="d1c39eef-f99b-4654-91cc-d2307c7e5e37" class="">Quatrième filtre : lunettes</h3><p id="1f1ccb65-0a07-4cb4-8456-efbd8c0a7d90" class="">Ici on cherche à mettre une image transparente des lunettes sur les yeux</p><pre id="3d2fbdac-193a-4fe1-aa5c-ec414583894d" class="code"><code>void filtre_lunettes(Mat &amp;img_neutre, int suprlunettes, int XeyeG, int YeyeG, int XeyeD, int YeyeD, int flagscreenshot) {
+
+    Paramètres : DATA[4][2:5] sont occupés par les coordonnées en X et en Y des yeux gauche et droit
+
+    On charge l&#x27;image désirée en premier - lunettes.png
+		On crée la fenêtre pour afficher le filtre
+
+    if(suprlunettes==0 &amp;&amp; nb_visages){
+
+        Si on ne cherche pas à supprimer le filtre et il n&#x27;y a qu un seul visage détécté : 
+
+        On met à l&#x27;échelle lunettes.png grace à la distance détéctée entre les deux yeux -
+					ceci nous permettra d&#x27;ajuster en temps réel la taille des lunettes en fonction de la proximité du visage
+
+        Ensuite, toujours en fonction de la position des yeux, on determine les coordonnées du début de chargement de l&#x27;image par rapport à l image originale
+
+        OpenCV ne sait additionner que les image avec le même nombre des chaînes couleur -
+					or, une image png possède une chaîne alpha qui détérmine l&#x27;opacité du pixel, qui n est pas présente dans l image de la caméra,
+					donc il va transformer les pixels &quot;alpha&quot; de l&#x27;image png en une couleur blanche;
+				On va donc récupérer cette couleur en plusieurs endroits et comparer les pixels un à un avec cette couleur
+
+        On copie l&#x27;image neutre dans la nouvelle fenêtre
+        for (int x=5; x&lt;=Llen-5; x++)
+        for (int y=5; y&lt;=Lwid-5; y++) {
+
+            Pour tout pixel de l&#x27;image lunettes, à part un &quot;cadre&quot; de 5 pixels :
+
+            if ((pixelCurr!= pixelComp1)&amp;&amp;(pixelCurr != pixelComp2)&amp;&amp;(pixelCurr != pixelComp3)&amp;&amp;(cx&lt;LENcam)&amp;&amp;(cy&lt;WIDcam)&amp;&amp;(cx&gt;0)&amp;&amp;(cy&gt;0))
+
+                Si le pixel courant n&#x27;a pas la même couleur que celle récupérée pour le comparaison et
+								Si l&#x27;image ne dépasse pas les limites de la taille de la caméra :
+
+								Echanger le pixel sur l&#x27;image de la caméra par le pixel corréspondant de celle des lunettes
+        }
+
+        On diminue la taille de l&#x27;image un peu pour les questions de performance
+
+        if(flagtextlabel==1){
+            Ecrire le texte dans la fenêtre si ceci est demandé
+        }
+
+        Enfin, on affiche la fenêtre
+
+        if (flagscreenshot) {
+            Enregistrer un screenshot de la fenêtre dans le dossier &quot;photos&quot; si ceci est demandé
+        }
+    }
+
+    else if (suprlunettes==1){
+        Supprimer la fenête si on reclick sur le bouton
+    }
+}</code></pre><h3 id="b9dd9ae8-605d-4d87-b642-42f10e647634" class="">Cinquième et sixième filtres : nez de clown et masque chirurgical</h3><p id="165deaea-081d-42c7-b6ca-01bfe302847f" class="">Leur fonctionnement est essentiellement pareil que le code précédent. La position et la taille du nez de clown est déterminée à partir des coordonnées du nez et celui du masque se fait encore à partir des coordonnées des yeux qui sont plus stables que la position des oreilles.</p><h3 id="a625ad3f-1120-4311-8f36-5a6e054e2852" class="">Septième filtre : dessin avec le nez</h3><p id="9035b4e9-d83f-4e69-b1de-2567b3417e2a" class="">Le but de ce filtre est de laisser l’utilisateur de dessiner sur l’écran avec leur nez. L’image est gardée pendant 10 second avant de se réinitialiser.</p><pre id="1da9e776-1483-4215-9eb5-7509eb579337" class="code"><code>void filtre_jeudessineavecnez(Mat &amp;img_neutre, int suprfiltrejeudessineavecnez, int Xnez, int Ynez, int* XnezPrec, int* YnezPrec, int flagscreenshot){
+
+    Paramètres : DATA[7][2:3] est occupé par les coordonnées du nez actuels, DATA[7][4:5] sont les pointeurs vers les coordonnées du nez précédents
+
+    Tout d&#x27;abord on crée la fenêtre pour afficher le filtre
+    
+    if (suprfiltrejeudessineavecnez==0 &amp;&amp; nb_visages){
+
+        Si on ne cherche pas à supprimer le filtre et il n&#x27;y a qu un seul visage détécté : 
+
+        if(imageavecligne.empty()){
+            Si l&#x27;image avec dessin est vide :
+						prendre les bons paramètres pour une nouvelle image : taille de la matrice, nombre des chaînes couleur...
+        }
+
+        On rend l&#x27;image originale pmus flou
+        
+        On dessine une ligne entre les coordonnées du nez actuels et les coordonnées précédents
+
+        On met à jeur les &quot;coordonnées pécédents&quot;
+
+        if(flagtextlabel==1){
+            Ecrire le texte dans la fenêtre si ceci est demandé
+        }
+
+        Enfin, on affiche la fenêtre + force ça position dans l&#x27;écran
+
+        if (flagscreenshot) {
+            Enregistrer un screenshot de la fenêtre dans le dossier &quot;photos&quot; si ceci est demandé
+        }
+    }
+    else if (suprfiltrejeudessineavecnez==1){
+        Supprimer la fenête si on reclick sur le bouton
+    }
+}</code></pre><p id="c850fd7d-5b53-4030-bf4c-4297411b457b" class="">Ce filtre demande un dernier paramètre - les timer de 20 seconds. Son flag d’activation se situe à <code>DATA[7][6]</code> et on l’initialise dans la fonction <code>main</code> :</p><pre id="57f11c70-11e0-44eb-afc2-6e70d1859c69" class="code"><code>				if(DATA[7][0]){
+            if (DATA[7][6]) {
+                tempsJeu = time(NULL); //debut du timer, initialisé une fois la fenêtre ouverte
+                printf(&quot;Début des 20 secondes\n&quot;);
+                DATA[7][6]=0;
+            }
+            filtre_jeudessineavecnez(img_neutre,DATA[7][1],DATA[7][2],DATA[7][3],&amp;DATA[7][4],&amp;DATA[7][5],DATA[8][0]);
+            tempsFin = time(NULL); //fin du timer, se met à jour à chaque tour de boucle tant que la fenêtre est ouverte
+            if (difftime(tempsFin,tempsJeu)&gt;10) { 
+//le timer est de type time_t défini dans time.h et 
+//time(NULL) retourne le nombre des secondes écoulés depuis 00:00 de la date d&#x27;aujourd&#x27;hui;
+//pour compter les 20 secondes on doit donc comparér tempsJeu et tempsFin 
+                imageavecligne = cv::Mat::zeros(img_neutre.size(), img_neutre.type());
+                printf(&quot;Fin des 20 secondes, reset des lignes\n&quot;);
+                tempsJeu = time(NULL); //réinitialiser le timer une fois les 20 secondes passés
+            }
+        }</code></pre></li></ul><h2 id="00c8544e-ab5b-42bf-8e9b-1fe52efbac00" class="">- main</h2><p id="c26b6aca-38f7-4b40-a396-1dcb8b920886" class="">Dans le main, il a juste les déclarations des objets nécessaires à l’uilisation du programme, comme expliqué plus haut</p><p id="90b1dc40-a929-48c7-9788-1346d39b8a93" class="">Les points clés sont:</p><pre id="00a7a5c3-34f6-4104-88d7-f00f5ccd77c3" class="code"><code>//definition du face detector
+frontal_face_detector faceDetector = get_frontal_face_detector();
+
+//definition du landmark detector
+shape_predictor landmarkDetector;
+    
+//permet de charger le fichier modèle pour le face landmark
+deserialize(&quot;../shape_predictor_68_face_landmarks.dat&quot;) &gt;&gt; landmarkDetector;</code></pre><p id="4f461696-f7ec-4bae-9848-558c3d0bf2a2" class="">Il y a ensuite une boucle infinie qui en permanence appelle la fonction pour détecter les visages et dessiner les points de référence + qui teste les flags des filtres pour les activer ou non</p><pre id="454a1f85-35d7-4d1c-942e-7c036777b11f" class="code"><code>//BOUCLE INFINIE TRAITEMENT VIDEO et lancement des filtres
+    while (1){
+        //lecture de la webcam et stockage dans Matrice img_originale
+        videoCapture &gt;&gt; img_originale;
+        cv::flip(img_originale,img_originale,1);//effet miroir selon avec vertical
+
+        landmarks_dessineleslignes  (img_originale, faceDetector, landmarkDetector, faces, resizeScale, skipFrames, frameCounter,img_neutre,
+                                    DATA[1], DATA[2], DATA[3], DATA[4], DATA[5], DATA[6], DATA[7]);
+
+				/* gestion des flags des filtres*/</code></pre><p id="6ff406aa-7642-41f6-905a-bbd92b12d480" class="">
+</p><pre id="5c8c1faa-41a3-4eea-a0b2-28729f82e089" class="code code-wrap"><code>if(DATA[1][0]){            
+	filtre_miroirdroite(img_neutre,DATA[1][1],DATA[1][2],DATA[8][0]);        
+}        
+if ((!DATA[1][0])&amp;&amp;(DATA[1][1])){            
+	//permet d&#x27;appeller la fonction et de destroy la fenetre             
+	filtre_miroirdroite(img_neutre,DATA[1][1],DATA[1][2],DATA[8][0]);        
+}</code></pre><p id="9792b2e5-1433-4701-bd6e-14bf3852dbdb" class="">Dans cet exemple, on appelle le premier filtre si <code>DATA[1][0]</code> est à 1 et on le supprime si <code>DATA[1][1]</code> est à 1</p><p id="b31c2a24-9617-47c7-8573-9730c971ae51" class="">
+</p><p id="4b863b21-9215-49a2-b9fe-2308ceb8e5f4" class="">Enfin, comme pour la partie de suivis de couleur, si le mode suivis de visage est activé, on va récupérer la position du centre du visage et contrôler les servos moteurs en fonction. [Voir la vidéo demo suivis_visage]</p><p id="08f0f309-70db-4723-bf51-96a191b34250" class="">
+</p><p id="d45b410d-f1c0-4f27-9a3c-bce6e6a71761" class="">▪️ <strong>Merci pour votre lecture </strong>▪️</p><hr id="909c1d16-4cc7-4dc2-9308-7209fd08067e"/></div></article></body></html>
